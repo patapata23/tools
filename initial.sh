@@ -13,5 +13,5 @@ ssh $USERNAME@$IP "/tmp/data/init.sh"
 
 for user in fkarasaw mtaguch tahatori
 do
-  rsync -acv $user/* $USERNAME@$IP:/$user/
+  rsync -acv $user/* $user@$IP:/home/$user/
 done
