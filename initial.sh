@@ -7,6 +7,11 @@ IP=$1
 USERNAME=$2
 USERNAME=${USERNAME:-isucon}
 
-ls 
+
 rsync -acv data $USERNAME@$IP:/tmp/
 ssh $USERNAME@$IP "/tmp/data/init.sh"
+
+for user in fkarasaw mtaguch tahatori
+do
+  rsync -acv $user/* $USERNAME@$IP:/$user/
+done
